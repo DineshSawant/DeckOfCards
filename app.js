@@ -6,11 +6,13 @@ angular
     var self = this;
 
     self.cards = [];
+    self.drawCards = [];
+
     self.createDeck = function() {
         this.names = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
         this.suits = [
-            {'icon': '\u2663'},
-            {'icon': '\u2660'},
+            {'icon': '\u2663', 'color': 'black'},
+            {'icon': '\u2660', 'color': 'black'},
             {'icon': '\u2661', 'color': 'red'},
             {'icon': '\u2662', 'color': 'red'}
         ];
@@ -28,12 +30,17 @@ angular
 
     self.createDeck();
 
-    self.shuffle = function() {
+    self.cardClick = function(card, index) {
+        self.cards.splice(index, 1);
+        self.drawCards.push(card);
+    }
+
+    self.shuffleOriginalDeck = function() {
         self.cards = self.cards.sort( () => Math.random() - 0.5);
     }
 
-    self.sortAll = function() {
-        self.cards = [];
-        self.cards = self.createDeck();
+    self.sortCards = function() {
+        // self.drawCards = [];
+        // self.drawCards = self.createDeck();
     }
   }

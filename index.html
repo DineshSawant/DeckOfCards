@@ -18,20 +18,32 @@
 
 <body ng-controller="DeckController as vm">
     <div>
-        <div>
-            <button type="button" ng-click="vm.shuffle()">Shuffle</button>
-            <!-- <button type="button" ng-click="vm.draw()">Draw</button> -->
-            <button type="button" ng-click="vm.sortAll()">Sort By Suit</button>
-        </div>
-
+        <h3>Original Deck</h3>
         <ul class="card-list">
             <li ng-repeat="card in vm.cards">
+                <div class="card {{card.suit.color}}" ng-click="vm.cardClick(card, $index)">
+                    <div class="letter">{{card.value}}</div>
+                    <div class="suit">{{card.suit.icon}}</div>
+                </div>
+            </li>
+        </ul>
+        <div>
+            <button type="button" ng-click="vm.shuffleOriginalDeck()">Shuffle Original Deck</button>
+        </div>
+
+        <h3>Drawn Cards</h3>
+        <ul class="card-list">
+            <li ng-repeat="card in vm.drawCards">
                 <div class="card {{card.suit.color}}">
                     <div class="letter">{{card.value}}</div>
                     <div class="suit">{{card.suit.icon}}</div>
                 </div>
             </li>
         </ul>
+
+        <div>
+            <button type="button" ng-click="vm.sortCards()">Sort Cards</button>
+        </div>
     </div>
 </body>
 
