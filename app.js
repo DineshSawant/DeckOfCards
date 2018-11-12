@@ -75,7 +75,7 @@ angular
 
         clubs = self.sortOneSuit(clubs);
         spades = self.sortOneSuit(spades);
-        spades = self.sortOneSuit(spades);
+        hearts = self.sortOneSuit(hearts);
         diamonds = self.sortOneSuit(diamonds);
 
         self.drawCards = clubs.concat(spades, hearts, diamonds);

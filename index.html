@@ -19,6 +19,7 @@
 <body ng-controller="DeckController as vm">
     <div>
         <h3>Original Deck</h3>
+        <p>To draw a card just click on card</p>
         <ul class="card-list">
             <li ng-repeat="card in vm.cards">
                 <div class="card {{card.suit.color}}" ng-click="vm.cardClick(card, $index)">
