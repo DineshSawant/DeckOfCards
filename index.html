@@ -22,7 +22,7 @@
         <ul class="card-list">
             <li ng-repeat="card in vm.cards">
                 <div class="card {{card.suit.color}}" ng-click="vm.cardClick(card, $index)">
-                    <div class="letter">{{card.value}}</div>
+                    <div class="letter">{{card.value.value}}</div>
                     <div class="suit">{{card.suit.icon}}</div>
                 </div>
             </li>
@@ -35,7 +35,7 @@
         <ul class="card-list">
             <li ng-repeat="card in vm.drawCards">
                 <div class="card {{card.suit.color}}">
-                    <div class="letter">{{card.value}}</div>
+                    <div class="letter">{{card.value.value}}</div>
                     <div class="suit">{{card.suit.icon}}</div>
                 </div>
             </li>
